@@ -26,10 +26,12 @@ public class Spring6DeclarativeHhtpInterfacesApplication {
 	}
 
 	@Bean
-	public PostsClient createPostsClient(WebClient webClient){
-		HttpServiceProxyFactory httpServiceProxyFactory = HttpServiceProxyFactory
-				.builder(WebClientAdapter.forClient(webClient))
-				.build();
+	public HttpServiceProxyFactory createProxyFactory(WebClient webClient){
+		return HttpServiceProxyFactory.builder(WebClientAdapter.forClient(webClient)).build();
+	}
+
+	@Bean
+	public PostsClient createPostsClient(HttpServiceProxyFactory httpServiceProxyFactory ){
 		return httpServiceProxyFactory.createClient(PostsClient.class);
 	}
 

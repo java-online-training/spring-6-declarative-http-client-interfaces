@@ -18,11 +18,7 @@ class PostsClientTest {
 
 	@Test
 	public void testPostsClientGet() {
-
 		List<Post> posts = postsClient.getAllPosts();
-
-
-
 		assertNotNull(posts);
 	}
 
