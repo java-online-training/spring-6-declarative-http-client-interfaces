@@ -1,6 +1,8 @@
 package com.jot;
 
 import com.jot.httpclients.PostsClient;
+import com.jot.httpclients.ReactivePostsClient;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +35,11 @@ public class Spring6DeclarativeHhtpInterfacesApplication {
 	@Bean
 	public PostsClient createPostsClient(HttpServiceProxyFactory httpServiceProxyFactory ){
 		return httpServiceProxyFactory.createClient(PostsClient.class);
+	}
+
+	@Bean
+	public ReactivePostsClient createReactivePostsClient(HttpServiceProxyFactory httpServiceProxyFactory ) {
+		return httpServiceProxyFactory.createClient(ReactivePostsClient.class);
 	}
 
 }
