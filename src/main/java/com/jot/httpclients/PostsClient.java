@@ -23,8 +23,4 @@ public interface PostsClient {
 
     @PostExchange("/posts")
     public Post createPost(@RequestBody Post post);
-
-    @PutExchange("/posts")
-    public Post updatePost(@RequestBody Post post);
-
 }

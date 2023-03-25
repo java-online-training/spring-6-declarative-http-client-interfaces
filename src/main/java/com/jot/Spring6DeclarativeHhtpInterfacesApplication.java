@@ -15,12 +15,12 @@ public class Spring6DeclarativeHhtpInterfacesApplication {
 		SpringApplication.run(Spring6DeclarativeHhtpInterfacesApplication.class, args);
 	}
 
-	private String serviceUrl = "https://jsonplaceholder.typicode.com/";
+	private static final String POST_SERVICE_BASE_URL = "https://jsonplaceholder.typicode.com/";
 
 	@Bean
 	public WebClient createWebClient(){
 		WebClient webClient = WebClient.builder()
-				.baseUrl(serviceUrl)
+				.baseUrl(POST_SERVICE_BASE_URL)
 				.build();
 		return webClient;
 	}

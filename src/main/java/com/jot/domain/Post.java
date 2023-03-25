@@ -1,18 +1,3 @@
 package com.jot.domain;
 
-import lombok.Data;
-
-import java.util.Objects;
-
-@Data
-public class Post {
-
-    private Integer userId;
-
-    private Integer id;
-
-    private String title;
-
-    private String body;
-
-}
+public record Post (Integer userId, Integer id, String title, String body ){}
